@@ -16,9 +16,17 @@ public class program
         string hasilbaca = File.ReadAllText(posisifolder + "\\" + filename);
         return JsonSerializer.Deserialize<Member>(hasilbaca);
     }
-    
+
+    public static MODUL7 readJSON1(string filename)
+    {
+        string posisifolder = ".";
+        string hasilbaca = File.ReadAllText(posisifolder + "\\" + filename);
+        return JsonSerializer.Deserialize<MODUL7>(hasilbaca);
+    }
+
     private static void Main(string[] args)
     {
+        
         Mahasiswa Mhs = ReadJSON("Jurnal7_1_1302210104.json");
         
         Console.WriteLine("Name : " + Mhs.firstName + " " + Mhs.lastName);
@@ -38,5 +46,9 @@ public class program
         {
             Console.WriteLine("Nama Awal: " + Members.members[i].firstName + " Nama akhir: " + Members.members[i].lastName + " Kelamin: " + Members.members[i].gender + " Umur: " + Members.members[i].age + " Nim: " + Members.members[i].nim);
         }
+        
+
+        MODUL7 MODUUL = readJSON1("jurnal7_3_1302213088.json");
+        Console.WriteLine(MODUUL.glossary.title);
     }
 }
