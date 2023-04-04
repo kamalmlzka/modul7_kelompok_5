@@ -31,6 +31,8 @@ public class program
             Console.WriteLine("Mata Kuliah " + (i + 1) + " : " + Mhs.courses[i].code + " " + Mhs.courses[i].name);
         }
         
+        Console.WriteLine();
+
         Member Members = readJSON("jurnal7_2_1302213058.json");
         for(int i = 0; i < Members.members.Count; i++)
         {
